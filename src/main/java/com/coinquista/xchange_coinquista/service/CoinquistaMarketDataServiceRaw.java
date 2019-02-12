@@ -1,10 +1,9 @@
-package com.coinquista.service;
+package com.coinquista.xchange_coinquista.service;
 
-import com.coinquista.dto.marketdata.*;
+import com.coinquista.xchange_coinquista.dto.marketdata.*;
 import org.knowm.xchange.Exchange;
-import com.coinquista.CoinquistaAdapters;
-import com.coinquista.dto.marketdata.*;
-import com.coinquista.dto.trade.CoinquistaListResponse;
+import com.coinquista.xchange_coinquista.CoinquistaAdapters;
+import com.coinquista.xchange_coinquista.dto.trade.CoinquistaListResponse;
 import org.knowm.xchange.currency.Currency;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;

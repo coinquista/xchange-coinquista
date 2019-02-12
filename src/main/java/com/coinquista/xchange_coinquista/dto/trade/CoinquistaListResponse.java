@@ -1,4 +1,4 @@
-package com.coinquista.dto.trade;
+package com.coinquista.xchange_coinquista.dto.trade;
 
 import java.util.HashMap;
 import java.util.List;

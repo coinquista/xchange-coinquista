@@ -1,12 +1,11 @@
-package com.coinquista;
+package com.coinquista.xchange_coinquista;
 
-import com.coinquista.dto.account.BalancesResponse;
-import com.coinquista.dto.account.UserResponse;
-import com.coinquista.dto.account.WithdrawRequest;
-import com.coinquista.dto.marketdata.AssetResponse;
-import com.coinquista.dto.marketdata.OrderbookOrderResponse;
-import com.coinquista.dto.trade.*;
-import com.coinquista.dto.trade.*;
+import com.coinquista.xchange_coinquista.dto.account.BalancesResponse;
+import com.coinquista.xchange_coinquista.dto.account.UserResponse;
+import com.coinquista.xchange_coinquista.dto.account.WithdrawRequest;
+import com.coinquista.xchange_coinquista.dto.marketdata.AssetResponse;
+import com.coinquista.xchange_coinquista.dto.marketdata.OrderbookOrderResponse;
+import com.coinquista.xchange_coinquista.dto.trade.*;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

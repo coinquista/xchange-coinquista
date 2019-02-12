@@ -1,4 +1,4 @@
-package com.coinquista.service;
+package com.coinquista.xchange_coinquista.service;
 
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.currency.CurrencyPair;

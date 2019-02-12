@@ -1,10 +1,10 @@
-package com.coinquista;
+package com.coinquista.xchange_coinquista;
 
-import com.coinquista.dto.marketdata.DealResponse;
-import com.coinquista.dto.marketdata.OrderbookOrderResponse;
-import com.coinquista.dto.trade.CoinquistaActiveOrder;
-import com.coinquista.dto.trade.CoinquistaOrderRequest;
-import com.coinquista.dto.trade.UserDealResponse;
+import com.coinquista.xchange_coinquista.dto.marketdata.DealResponse;
+import com.coinquista.xchange_coinquista.dto.marketdata.OrderbookOrderResponse;
+import com.coinquista.xchange_coinquista.dto.trade.CoinquistaActiveOrder;
+import com.coinquista.xchange_coinquista.dto.trade.CoinquistaOrderRequest;
+import com.coinquista.xchange_coinquista.dto.trade.UserDealResponse;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
 import org.knowm.xchange.dto.marketdata.Trade;

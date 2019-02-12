@@ -1,6 +1,7 @@
-package com.coinquista.dto.account;
+package com.coinquista.xchange_coinquista.dto.marketdata;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -11,15 +12,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "asset",
-        "balance"
+        "symbols"
 })
-public class BalancesResponse {
+public class ExchangeInfoResponse {
 
-    @JsonProperty("asset")
-    private String asset;
-    @JsonProperty("balance")
-    private String balance;
+    @JsonProperty("symbols")
+    private List<Symbol> symbols = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -27,38 +25,26 @@ public class BalancesResponse {
      * No args constructor for use in serialization
      *
      */
-    public BalancesResponse() {
+    public ExchangeInfoResponse() {
     }
 
     /**
      *
-     * @param balance
-     * @param asset
+     * @param symbols
      */
-    public BalancesResponse(String asset, String balance) {
+    public ExchangeInfoResponse(List<Symbol> symbols) {
         super();
-        this.asset = asset;
-        this.balance = balance;
+        this.symbols = symbols;
     }
 
-    @JsonProperty("asset")
-    public String getAsset() {
-        return asset;
+    @JsonProperty("symbols")
+    public List<Symbol> getSymbols() {
+        return symbols;
     }
 
-    @JsonProperty("asset")
-    public void setAsset(String asset) {
-        this.asset = asset;
-    }
-
-    @JsonProperty("balance")
-    public String getBalance() {
-        return balance;
-    }
-
-    @JsonProperty("balance")
-    public void setBalance(String balance) {
-        this.balance = balance;
+    @JsonProperty("symbols")
+    public void setSymbols(List<Symbol> symbols) {
+        this.symbols = symbols;
     }
 
     @JsonAnyGetter

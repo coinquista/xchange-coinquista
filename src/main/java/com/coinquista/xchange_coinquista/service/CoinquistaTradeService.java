@@ -1,9 +1,9 @@
-package com.coinquista.service;
+package com.coinquista.xchange_coinquista.service;
 
 import org.knowm.xchange.Exchange;
-import com.coinquista.CoinquistaAdapters;
-import com.coinquista.dto.trade.CoinquistaActiveOrder;
-import com.coinquista.dto.trade.CoinquistaListResponse;
+import com.coinquista.xchange_coinquista.CoinquistaAdapters;
+import com.coinquista.xchange_coinquista.dto.trade.CoinquistaActiveOrder;
+import com.coinquista.xchange_coinquista.dto.trade.CoinquistaListResponse;
 import org.knowm.xchange.dto.trade.LimitOrder;
 import org.knowm.xchange.dto.trade.MarketOrder;
 import org.knowm.xchange.dto.trade.OpenOrders;

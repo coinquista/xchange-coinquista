@@ -1,8 +1,8 @@
-package com.coinquista;
+package com.coinquista.xchange_coinquista;
 
-import com.coinquista.service.CoinquistaAccountService;
-import com.coinquista.service.CoinquistaMarketDataService;
-import com.coinquista.service.CoinquistaTradeService;
+import com.coinquista.xchange_coinquista.service.CoinquistaAccountService;
+import com.coinquista.xchange_coinquista.service.CoinquistaMarketDataService;
+import com.coinquista.xchange_coinquista.service.CoinquistaTradeService;
 import org.knowm.xchange.BaseExchange;
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.ExchangeSpecification;

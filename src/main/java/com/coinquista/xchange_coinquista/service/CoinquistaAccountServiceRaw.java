@@ -1,9 +1,9 @@
-package com.coinquista.service;
+package com.coinquista.xchange_coinquista.service;
 
 import org.knowm.xchange.Exchange;
-import com.coinquista.dto.account.BalancesResponse;
-import com.coinquista.dto.account.UserResponse;
-import com.coinquista.dto.account.WithdrawRequest;
+import com.coinquista.xchange_coinquista.dto.account.BalancesResponse;
+import com.coinquista.xchange_coinquista.dto.account.UserResponse;
+import com.coinquista.xchange_coinquista.dto.account.WithdrawRequest;
 import org.knowm.xchange.currency.Currency;
 import org.knowm.xchange.dto.account.AccountInfo;
 import org.knowm.xchange.dto.account.Balance;

@@ -1,9 +1,8 @@
-package com.coinquista.service;
+package com.coinquista.xchange_coinquista.service;
 
-import com.coinquista.dto.trade.*;
+import com.coinquista.xchange_coinquista.dto.trade.*;
 import org.knowm.xchange.Exchange;
-import com.coinquista.CoinquistaAdapters;
-import com.coinquista.dto.trade.*;
+import com.coinquista.xchange_coinquista.CoinquistaAdapters;
 import org.knowm.xchange.dto.marketdata.Trades;
 import org.knowm.xchange.dto.trade.UserTrade;
 import org.knowm.xchange.dto.trade.UserTrades;

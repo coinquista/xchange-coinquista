@@ -1,7 +1,6 @@
-package com.coinquista.dto.marketdata;
+package com.coinquista.xchange_coinquista.dto.account;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -12,12 +11,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "symbols"
+        "asset",
+        "balance"
 })
-public class ExchangeInfoResponse {
+public class BalancesResponse {
 
-    @JsonProperty("symbols")
-    private List<Symbol> symbols = null;
+    @JsonProperty("asset")
+    private String asset;
+    @JsonProperty("balance")
+    private String balance;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -25,26 +27,38 @@ public class ExchangeInfoResponse {
      * No args constructor for use in serialization
      *
      */
-    public ExchangeInfoResponse() {
+    public BalancesResponse() {
     }
 
     /**
      *
-     * @param symbols
+     * @param balance
+     * @param asset
      */
-    public ExchangeInfoResponse(List<Symbol> symbols) {
+    public BalancesResponse(String asset, String balance) {
         super();
-        this.symbols = symbols;
+        this.asset = asset;
+        this.balance = balance;
     }
 
-    @JsonProperty("symbols")
-    public List<Symbol> getSymbols() {
-        return symbols;
+    @JsonProperty("asset")
+    public String getAsset() {
+        return asset;
     }
 
-    @JsonProperty("symbols")
-    public void setSymbols(List<Symbol> symbols) {
-        this.symbols = symbols;
+    @JsonProperty("asset")
+    public void setAsset(String asset) {
+        this.asset = asset;
+    }
+
+    @JsonProperty("balance")
+    public String getBalance() {
+        return balance;
+    }
+
+    @JsonProperty("balance")
+    public void setBalance(String balance) {
+        this.balance = balance;
     }
 
     @JsonAnyGetter

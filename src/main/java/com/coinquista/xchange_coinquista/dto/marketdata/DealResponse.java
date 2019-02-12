@@ -1,4 +1,5 @@
-package com.coinquista.dto.marketdata;
+package com.coinquista.xchange_coinquista.dto.marketdata;
+
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -11,23 +12,20 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "amount",
-        "completedAmount",
-        "orderId",
-        "price",
-        "timestamp"
+        "rate",
+        "timestamp",
+        "type"
 })
-public class OrderbookOrderResponse {
+public class DealResponse {
 
     @JsonProperty("amount")
     private String amount;
-    @JsonProperty("completedAmount")
-    private String completedAmount;
-    @JsonProperty("orderId")
-    private Integer orderId;
-    @JsonProperty("price")
-    private String price;
+    @JsonProperty("rate")
+    private String rate;
     @JsonProperty("timestamp")
     private String timestamp;
+    @JsonProperty("type")
+    private String type;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -35,24 +33,22 @@ public class OrderbookOrderResponse {
      * No args constructor for use in serialization
      *
      */
-    public OrderbookOrderResponse() {
+    public DealResponse() {
     }
 
     /**
      *
      * @param timestamp
-     * @param completedAmount
      * @param amount
-     * @param price
-     * @param orderId
+     * @param rate
+     * @param type
      */
-    public OrderbookOrderResponse(String amount, String completedAmount, Integer orderId, String price, String timestamp) {
+    public DealResponse(String amount, String rate, String timestamp, String type) {
         super();
         this.amount = amount;
-        this.completedAmount = completedAmount;
-        this.orderId = orderId;
-        this.price = price;
+        this.rate = rate;
         this.timestamp = timestamp;
+        this.type = type;
     }
 
     @JsonProperty("amount")
@@ -65,34 +61,14 @@ public class OrderbookOrderResponse {
         this.amount = amount;
     }
 
-    @JsonProperty("completedAmount")
-    public String getCompletedAmount() {
-        return completedAmount;
+    @JsonProperty("rate")
+    public String getRate() {
+        return rate;
     }
 
-    @JsonProperty("completedAmount")
-    public void setCompletedAmount(String completedAmount) {
-        this.completedAmount = completedAmount;
-    }
-
-    @JsonProperty("orderId")
-    public Integer getOrderId() {
-        return orderId;
-    }
-
-    @JsonProperty("orderId")
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
-
-    @JsonProperty("price")
-    public String getPrice() {
-        return price;
-    }
-
-    @JsonProperty("price")
-    public void setPrice(String price) {
-        this.price = price;
+    @JsonProperty("rate")
+    public void setRate(String rate) {
+        this.rate = rate;
     }
 
     @JsonProperty("timestamp")
@@ -103,6 +79,16 @@ public class OrderbookOrderResponse {
     @JsonProperty("timestamp")
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
+    }
+
+    @JsonProperty("type")
+    public String getType() {
+        return type;
+    }
+
+    @JsonProperty("type")
+    public void setType(String type) {
+        this.type = type;
     }
 
     @JsonAnyGetter

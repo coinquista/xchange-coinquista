@@ -1,5 +1,4 @@
-package com.coinquista.dto.marketdata;
-
+package com.coinquista.xchange_coinquista.dto.marketdata;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -12,20 +11,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "amount",
-        "rate",
-        "timestamp",
-        "type"
+        "completedAmount",
+        "orderId",
+        "price",
+        "timestamp"
 })
-public class DealResponse {
+public class OrderbookOrderResponse {
 
     @JsonProperty("amount")
     private String amount;
-    @JsonProperty("rate")
-    private String rate;
+    @JsonProperty("completedAmount")
+    private String completedAmount;
+    @JsonProperty("orderId")
+    private Integer orderId;
+    @JsonProperty("price")
+    private String price;
     @JsonProperty("timestamp")
     private String timestamp;
-    @JsonProperty("type")
-    private String type;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -33,22 +35,24 @@ public class DealResponse {
      * No args constructor for use in serialization
      *
      */
-    public DealResponse() {
+    public OrderbookOrderResponse() {
     }
 
     /**
      *
      * @param timestamp
+     * @param completedAmount
      * @param amount
-     * @param rate
-     * @param type
+     * @param price
+     * @param orderId
      */
-    public DealResponse(String amount, String rate, String timestamp, String type) {
+    public OrderbookOrderResponse(String amount, String completedAmount, Integer orderId, String price, String timestamp) {
         super();
         this.amount = amount;
-        this.rate = rate;
+        this.completedAmount = completedAmount;
+        this.orderId = orderId;
+        this.price = price;
         this.timestamp = timestamp;
-        this.type = type;
     }
 
     @JsonProperty("amount")
@@ -61,14 +65,34 @@ public class DealResponse {
         this.amount = amount;
     }
 
-    @JsonProperty("rate")
-    public String getRate() {
-        return rate;
+    @JsonProperty("completedAmount")
+    public String getCompletedAmount() {
+        return completedAmount;
     }
 
-    @JsonProperty("rate")
-    public void setRate(String rate) {
-        this.rate = rate;
+    @JsonProperty("completedAmount")
+    public void setCompletedAmount(String completedAmount) {
+        this.completedAmount = completedAmount;
+    }
+
+    @JsonProperty("orderId")
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    @JsonProperty("orderId")
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
+
+    @JsonProperty("price")
+    public String getPrice() {
+        return price;
+    }
+
+    @JsonProperty("price")
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     @JsonProperty("timestamp")
@@ -79,16 +103,6 @@ public class DealResponse {
     @JsonProperty("timestamp")
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
-    }
-
-    @JsonProperty("type")
-    public String getType() {
-        return type;
-    }
-
-    @JsonProperty("type")
-    public void setType(String type) {
-        this.type = type;
     }
 
     @JsonAnyGetter

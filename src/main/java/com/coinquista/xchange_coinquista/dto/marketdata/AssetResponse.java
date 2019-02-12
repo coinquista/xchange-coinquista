@@ -1,4 +1,4 @@
-package com.coinquista.dto.marketdata;
+package com.coinquista.xchange_coinquista.dto.marketdata;
 
 import java.util.HashMap;
 import java.util.Map;

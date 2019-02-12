@@ -1,4 +1,4 @@
-package com.coinquista.dto.account;
+package com.coinquista.xchange_coinquista.dto.account;
 
 import java.util.HashMap;
 import java.util.Map;

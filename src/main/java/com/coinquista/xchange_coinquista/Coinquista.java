@@ -1,8 +1,8 @@
-package com.coinquista;
+package com.coinquista.xchange_coinquista;
 
-import com.coinquista.dto.marketdata.DealResponse;
-import com.coinquista.dto.marketdata.ExchangeInfoResponse;
-import com.coinquista.dto.trade.CoinquistaListResponse;
+import com.coinquista.xchange_coinquista.dto.marketdata.DealResponse;
+import com.coinquista.xchange_coinquista.dto.marketdata.ExchangeInfoResponse;
+import com.coinquista.xchange_coinquista.dto.trade.CoinquistaListResponse;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
