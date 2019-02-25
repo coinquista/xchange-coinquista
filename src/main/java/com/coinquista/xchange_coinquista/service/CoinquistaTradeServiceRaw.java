@@ -1,13 +1,16 @@
 package com.coinquista.xchange_coinquista.service;
 
+import com.coinquista.xchange_coinquista.Coinquista;
 import com.coinquista.xchange_coinquista.dto.trade.*;
 import org.knowm.xchange.Exchange;
 import com.coinquista.xchange_coinquista.CoinquistaAdapters;
+import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.marketdata.Trades;
 import org.knowm.xchange.dto.trade.UserTrade;
 import org.knowm.xchange.dto.trade.UserTrades;
 
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.Date;
 import java.util.List;
 
@@ -39,13 +42,24 @@ class CoinquistaTradeServiceRaw extends CoinquistaBaseService {
         List<UserTrade> userTrades = new ArrayList<>();
         boolean hasNextPage = true;
         for (int page = 1; hasNextPage; page++) {
-            CoinquistaListResponse<UserDealResponse> userDealResponses = coinquistaAuthenticated.getUserLatestDeals(
+            CoinquistaListResponse<UserDealResponse> userDealResponses = coinquistaAuthenticated.getUserLatestDealsByTime(
                     apiKey, from, to, page
             );
             hasNextPage = userDealResponses.getNext() != null;
             for (UserDealResponse userDeal : userDealResponses.getResults()) {
                 userTrades.add(CoinquistaAdapters.adaptUserDeal(userDeal));
             }
+        }
+        return new UserTrades(userTrades, Trades.TradeSortType.SortByTimestamp);
+    }
+
+    UserTrades getTradeHistory(CurrencyPair currencyPair) {
+        List<UserTrade> userTrades = new ArrayList<>();
+        CoinquistaListResponse<UserDealResponse> userDealResponses = coinquistaAuthenticated.getUserLatestDealsByPair(
+                apiKey, CoinquistaAdapters.getMarketName(currencyPair)
+        );
+        for (UserDealResponse userDeal : userDealResponses.getResults()) {
+            userTrades.add(CoinquistaAdapters.adaptUserDeal(userDeal));
         }
         return new UserTrades(userTrades, Trades.TradeSortType.SortByTimestamp);
     }

@@ -55,7 +55,7 @@ public class CoinquistaAdapters {
         if (marketOrder.getType() == Order.OrderType.BID) {
             return new CoinquistaOrderRequest(
                     symbol, "BUY", "MARKET", null, marketOrder.getOriginalAmount().toString(),
-                    marketOrder.getAveragePrice().toString()
+                    null
             );
         }
         else if (marketOrder.getType() == Order.OrderType.ASK) {

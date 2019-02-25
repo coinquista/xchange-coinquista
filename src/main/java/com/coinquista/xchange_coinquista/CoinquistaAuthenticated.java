@@ -3,7 +3,6 @@ package com.coinquista.xchange_coinquista;
 import com.coinquista.xchange_coinquista.dto.account.BalancesResponse;
 import com.coinquista.xchange_coinquista.dto.account.UserResponse;
 import com.coinquista.xchange_coinquista.dto.account.WithdrawRequest;
-import com.coinquista.xchange_coinquista.dto.marketdata.AssetResponse;
 import com.coinquista.xchange_coinquista.dto.marketdata.OrderbookOrderResponse;
 import com.coinquista.xchange_coinquista.dto.trade.*;
 
@@ -16,12 +15,6 @@ import java.util.List;
 @Path("api/v1/")
 @Consumes(value = MediaType.APPLICATION_JSON)
 public interface CoinquistaAuthenticated extends Coinquista {
-    @GET
-    @Path("assets/")
-    CoinquistaListResponse<AssetResponse> getAssets(
-            @HeaderParam("Authorization") String apiKey
-    );
-
     @GET
     @Path("assets/{currency}/deposit_address/")
     HashMap<String, String> returnDepositAddress(
@@ -90,10 +83,17 @@ public interface CoinquistaAuthenticated extends Coinquista {
 
     @GET
     @Path("userLatestDeals/")
-    CoinquistaListResponse<UserDealResponse> getUserLatestDeals(
+    CoinquistaListResponse<UserDealResponse> getUserLatestDealsByTime(
             @HeaderParam("Authorization") String apiKey,
             @QueryParam("startTime") Date startTime,
             @QueryParam("endTime") Date endTime,
             @QueryParam("page") int page
+    );
+
+    @GET
+    @Path("userLatestDeals/")
+    CoinquistaListResponse<UserDealResponse> getUserLatestDealsByPair(
+            @HeaderParam("Authorization") String apiKey,
+            @QueryParam("symbol") String symbol
     );
 }

@@ -11,6 +11,7 @@ import org.knowm.xchange.dto.trade.UserTrades;
 import org.knowm.xchange.exceptions.NotYetImplementedForExchangeException;
 import org.knowm.xchange.service.trade.TradeService;
 import org.knowm.xchange.service.trade.params.DefaultTradeHistoryParamsTimeSpan;
+import org.knowm.xchange.service.trade.params.TradeHistoryParamCurrencyPair;
 import org.knowm.xchange.service.trade.params.TradeHistoryParams;
 
 import java.util.ArrayList;
@@ -46,6 +47,10 @@ public class CoinquistaTradeService extends CoinquistaTradeServiceRaw implements
         if (params instanceof DefaultTradeHistoryParamsTimeSpan) {
             DefaultTradeHistoryParamsTimeSpan timeSpan = (DefaultTradeHistoryParamsTimeSpan) params;
             return super.getTradeHistory(timeSpan.getStartTime(), timeSpan.getEndTime());
+        }
+        else if (params instanceof TradeHistoryParamCurrencyPair) {
+            TradeHistoryParamCurrencyPair currencyPair = (TradeHistoryParamCurrencyPair) params;
+            return super.getTradeHistory(currencyPair.getCurrencyPair());
         }
         else {
             throw new NotYetImplementedForExchangeException("Unsupported TradeHistoryParams type");

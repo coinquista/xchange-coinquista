@@ -41,7 +41,7 @@ public class CoinquistaMarketDataServiceRaw extends CoinquistaBaseService {
 
     Map<Currency, CurrencyMetaData> getCurrenciesMetadata() {
         Map<Currency, CurrencyMetaData> result = new HashMap<>();
-        CoinquistaListResponse<AssetResponse> currencies = coinquistaAuthenticated.getAssets(apiKey);
+        CoinquistaListResponse<AssetResponse> currencies = coinquista.getAssets();
         for (AssetResponse currency : currencies.getResults()) {
             // TODO: coinquista has withdrawal constant fee and fee rate, xchange api accepts only constant fee
             CurrencyMetaData metaData = new CurrencyMetaData(currency.getShowPrecision(), null);
