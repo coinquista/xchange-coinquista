@@ -1,4 +1,5 @@
 package com.coinquista.xchange_coinquista.dto.marketdata;
+
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -14,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "completedAmount",
         "orderId",
         "price",
+        "rate",
         "timestamp"
 })
 public class OrderbookOrderResponse {
@@ -26,6 +28,8 @@ public class OrderbookOrderResponse {
     private Integer orderId;
     @JsonProperty("price")
     private String price;
+    @JsonProperty("rate")
+    private String rate;
     @JsonProperty("timestamp")
     private String timestamp;
     @JsonIgnore
@@ -43,15 +47,17 @@ public class OrderbookOrderResponse {
      * @param timestamp
      * @param completedAmount
      * @param amount
+     * @param rate
      * @param price
      * @param orderId
      */
-    public OrderbookOrderResponse(String amount, String completedAmount, Integer orderId, String price, String timestamp) {
+    public OrderbookOrderResponse(String amount, String completedAmount, Integer orderId, String price, String rate, String timestamp) {
         super();
         this.amount = amount;
         this.completedAmount = completedAmount;
         this.orderId = orderId;
         this.price = price;
+        this.rate = rate;
         this.timestamp = timestamp;
     }
 
@@ -93,6 +99,16 @@ public class OrderbookOrderResponse {
     @JsonProperty("price")
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    @JsonProperty("rate")
+    public String getRate() {
+        return rate;
+    }
+
+    @JsonProperty("rate")
+    public void setRate(String rate) {
+        this.rate = rate;
     }
 
     @JsonProperty("timestamp")

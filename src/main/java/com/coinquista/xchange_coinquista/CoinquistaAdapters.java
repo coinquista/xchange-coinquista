@@ -85,7 +85,7 @@ public class CoinquistaAdapters {
         Date timestamp = parseDatetime(order.getTimestamp());
         return new LimitOrder(
                 type, new BigDecimal(order.getAmount()), new BigDecimal(order.getCompletedAmount()), pair,
-                order.getOrderId().toString(), timestamp, new BigDecimal(order.getPrice())
+                order.getOrderId().toString(), timestamp, new BigDecimal(order.getRate())
         );
     }
 
